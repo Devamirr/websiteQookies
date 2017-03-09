@@ -1,0 +1,310 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+// @include foundation-flex-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+
+@import 'appstyles';
+@import 'colors';
+@import 'base';
+// @import 'typography';
+@import 'kitchenSink';
+
+  $mq-mobile-narrower: "only screen and (max-width : 320px)";
+  $mq-mobile-wider: "only screen and (min-width : 320px)";
+
+  $mq-mobile-normal: "only screen and (max-width : 767px)";
+  $mq-tablet-wider: "only screen and (min-width : 768px)";
+
+  $mq-desktop-narrower: "only screen and (max-width : 1023px)";
+  $mq-desktop-wider: "only screen and (min-width : 1024px)";
+
+  $mq-large-desktop-narrower: "only screen and (max-width : 1379px)";
+  $mq-large-desktop-wider: "only screen and (min-width : 1380px)";
+
+  $mq-tablet: "only screen and (min-width : 768px) and (max-width : 1023px)";
+  $mq-mobile: "only screen and (min-width : 320px) and (max-width : 480px)";
+
+
+  $background-color : #444;
+  $highlight-color : #cdcdcd;
+  $hover-color : #ED3D3D;
+
+  // on p = smoooth font scaling font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+
+  body{
+
+    overflow: auto;
+    background: $snow;
+    width: 100%; height: auto;
+
+      a {
+    text-decoration: none;
+    text-transform: uppercase;
+    }
+  }
+
+  #header { transition: all $transition; font-size: 0.9em; font-weight: 300; background: $LightDark; margin: 0 auto;  border-bottom: 4px solid $main;
+    @media #{$mq-tablet}{ padding: 1em 0;}
+    @media #{$mq-mobile-normal}{ height: 4em; padding: 0 ; position: fixed; top: 0; width: 100% ; z-index: 15;}
+    a { color: $text-color; }
+    .header-inner { max-width: 1024px; margin: 0 auto; position: relative; height: 6em;
+      @media #{$mq-tablet}{ max-width: 768px; height: 6em; }
+      @media #{$mq-mobile-normal}{ height: 4em; padding: 0 1em 1em; }
+    }
+    .navbar {  top: 0; height: 100%;
+      @media #{$mq-mobile-normal}{ left: 0; height: 100%; width: 100%; position: absolute; }
+    }
+    .logo { margin: 1em 0; position: absolute; right: 360px; text-align: center; top: -8px; z-index: 5;
+      @media #{$mq-mobile-normal}{ position: absolute; transform: translate(50%, 0px); margin: 0 auto;  width: 60px; height: 50px; right: 50%; top: 5px; background: url("../images/crown.jpg.svg"); background-repeat: no-repeat;; background-size: contain;}
+      @media #{$mq-tablet}{ margin: 0.5em 0; right: 280px; top: -20px; }
+      img { background-position: contain; width: 300px;
+        @media #{$mq-mobile-normal}{ width: 135px; height: 50px; opacity: 0;}
+        @media #{$mq-tablet}{ width: 225px; }
+       }
+      }
+      .menuB { text-align: center; display: inline-block!important;
+        @media #{$mq-mobile-normal}{ display:none }
+        ul { list-style-type:none; transition: all $transition; line-height: 6; display: inline-block!important;
+          li { border-radius: 20px; transition: all $transition;
+            &:hover { background: $main;  }
+          }
+          .active {  background:$main; border-radius: 20px; }
+          .video { margin-right: 345px;
+             @media #{$mq-tablet}{ margin-right: 260px;}
+          }
+        }
+        li { display: inline; padding: 10px 1.2em; margin-right: 40px;
+          @media #{$mq-desktop-wider}{padding: 10px 1.2em; margin-right: 40px;
+          }
+          &:last-child { margin-right: 0px }
+        }
+      }
+      // Mobile Nav
+      nav { display: none; transition: all $transition; width: 100%;
+        @media #{$mq-mobile-normal}{ display: block;}
+        a { text-decoration: none; color: $snow; transition: color 0.3s ease;
+            &:hover { color: $main; }
+        }
+        .activeMob { color: $main; }
+        #menuToggle { display: block; position: relative; z-index: 1; -webkit-user-select: none; user-select: none; top: 16px;
+          input { display: block; width: 55px; height: 32px; position: absolute; top: 0px; left: -5px; cursor: pointer; opacity: 0; /* hide this */ z-index: 12; /* and place it over the hamburger */ -webkit-touch-callout: none; }
+          ul {
+            a { width: 100; display: block; border-bottom: 1px solid rgba(215, 7, 120, 0.2); }
+          }
+          span { display: block; width: 33px; height: 4px; margin-left: 10px; margin-bottom: 5px; position: relative; background: #cdcdcd; border-radius: 3px; z-index: 3; transform-origin: 4px 0px;
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+            &:first-child { transform-origin: 0% 0%; margin-left: 10px; }
+            &:nth-last-child(2) { transform-origin: 0% 100%; margin-left: 10px; }
+          }
+          input:checked ~ span { opacity: 1; margin-left: 10px; transform: rotate(45deg) translate(-2px, -1px); background: $main; &:nth-last-child(3) { margin-left: 10px; opacity: 0; transform: rotate(0deg) scale(0.2, 0.2); }
+            &:nth-last-child(2) { margin-left: 10px; opacity: 1; transform: rotate(-45deg) translate(0, -1px); }
+          }
+        }
+        #menu { position: absolute; width: 100%; padding: 50px; height: 100vh; top: 0; position: fixed; background: $LightDark; list-style-type: none; -webkit-font-smoothing: antialiased;
+          /* to stop flickering of text in safari */ transform-origin: 0% 0%; transform: translate(-100%, 0); transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+          li { padding: 10px 0; font-size: 22px; }
+        }
+        /* And let's fade it in from the left */
+        #menuToggle input:checked ~ ul { transform: scale(1, 1); opacity: 1; width: 100%; top: 0;
+        hr { background: none; }
+        }
+      }
+    }
+
+  //
+  //start homepage styles
+  #home { background: white; width: 100%; height: 100%; }
+
+//start slider styles
+.slider { width: 100%; height: auto; transition: all $transition;
+  .white-shade { width: 100%; height: 720px; background: url("../images/slider-form.svg"); position: absolute; z-index: 3; left:0; background-repeat: no-repeat; background-size: contain; padding: 0; margin: 0;
+    @media #{$mq-tablet}{ height: 420px;}
+    @media #{$mq-mobile-normal}{ display: none;
+
+    }
+  }
+  .orbit-container {
+      @media #{$mq-mobile-normal}{ margin-top: 57px; }
+    .orbit-slide-number, .orbit-timer { z-index: 0; }
+    .orbit-timer { width: 100%; top:0; left: 0;position: absolute;
+      .orbit-progress { position: absolute; top: 0; left: 0; height: 4px;}
+    }
+    .orbit-timer.paused span, .orbit-timer span  { top: 10px; right: 10px }
+    .orbit-caption { display: none;
+      @media #{$mq-tablet}{ display:none;}
+      @media #{$mq-mobile-normal}{ display: none;}
+     }
+    .orbit-prev {
+      left: 20px; z-index: 4;
+    }
+    .orbit-next {
+      right: 20px; z-index: 4;
+    }
+    .orbit-progress { background: $snow; }
+    .orbit-bullets-container {   margin: 0px; position: absolute; bottom:0px; top: inherit; right: 0px; z-index: 4;
+      .orbit-bullets { margin: 0px 50px 30px auto;
+        @media #{$mq-tablet}{ margin: 0px 50px 20px auto; }
+        li { transition: all $transition;  width: 0.9rem; height: 0.9rem; padding: 5px; background: $LightDark;
+          @media #{$mq-tablet}{ padding: 0px; }
+          @media #{$mq-mobile-normal}{ display: none;}
+          &:hover { background: $main;}
+          &:active { background: $main; }
+        }
+      }
+    }
+  }
+}
+.QuoteHolder { width: 100%; height: auto;
+  .quoteBlok {
+    .quotewrap { height: auto;
+      h5 { padding-top: 20px;
+        &:before { padding-top: 20px; content: "\201C"; font-family: Georgia, serif; font-size: 30px; font-weight: bold; color: $main; }
+        &:after { padding-top: 20px; content: "\201D"; font-family: Georgia, serif; font-size: 30px; font-weight: bold; color: $main; }
+        @media #{$mq-tablet}{ font-size: 1em; }
+        @media #{$mq-mobile-normal}{ font-size: 1em; }
+      }
+      p { margin-bottom: 0px;
+        @media #{$mq-mobile-normal}{ font-size: 0.8em; }
+      }
+    }
+    .starCol { margin-top: 10px;  padding-bottom: 30px; }
+  }
+}
+
+.add { width: 100%; height: 250px; padding: 50px 10px 10px 0px;
+  &.white { background: $snow; }
+  &.black { background: $LightDark; }
+  &.grad { background: #e6e6e6; /* Old browsers */ /* FF3.6-15 */
+  background: -webkit-linear-gradient(#e6e6e6 0%, #e5e3e3 100%);
+  background: -o-linear-gradient(#e6e6e6 0%, #e5e3e3 100%);
+  background: linear-gradient(#e6e6e6 0%, #e5e3e3 100%); /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#e5e3e3',GradientType=0 ); /* IE6-9 */
+    }
+  &.secondBlock {  }
+  &.thirdBlock {  }
+}
+
+.full-width {
+  max-width: 1400px;
+}
+
+
+
+#about { width: 100%; height: 100%;
+  .aboutPic { position: relative; background: url("../images/kaspasAbout.jpg"); background-repeat: no-repeat; background-size: cover; height: auto; min-height: 443px; width: 100%;  background-size: center center;
+    @media #{$mq-mobile-normal}{ margin-top: 57px; min-height: 200px; }
+  }
+  .add { width: 100%; height: 350px; padding: 50px 10px 10px 0px;
+    &.white { background: $snow; }
+    &.black { background: $LightDark; }
+    }
+
+  .white-shade { background-position: center bottom; bottom:0;  width: 100%; height: 70px; background: url("../images/about-form.svg"); position: absolute; z-index: 3; left:0; background-repeat: no-repeat; background-size: cover; padding: 0; margin: 0;
+    @media #{$mq-mobile-normal}{ display: none;
+
+    }
+  }
+}
+
+#Menu {
+  .headTekst { padding: 70px;
+    @media #{$mq-mobile-normal}{ padding: 80px 0px 0px 0px; font-size: 1em; }
+    h1 {
+      @media #{$mq-mobile-normal}{ font-size: 1.5em; }
+      i { font-size: 0.7em; padding: 0px 10px 20px 10px;
+      @media #{$mq-mobile-normal}{ padding: 0px 5px 0px 5px; }
+      }
+      .paddRight { margin-right: 10px;  transform: translate(0px,-4px); }
+      .paddLeft { margin-left: 10px;  transform: translate(0px,-4px); }
+    }
+  }
+  .tes {
+    #portfolio { width:100%; margin:20px 0px; }
+    .tile { float:left; min-height:300px; padding: 20px; border:1px #fff solid;
+       &:hover { opacity: 0.5; }
+     }
+    .web { background:#00C5CD;}
+    .flyers { background: #CC3232;}
+    .bcards { background: #ddd; }
+    p{ padding:10px; border-bottom: 1px #ccc dotted; text-decoration: none; font-family: Arial; text-transform:uppercase; font-size: 12px; color: #333; display:block; float:left;}
+    p:hover { cursor:pointer; background: #333; color:#eee; }
+  }
+
+}
+
+
+
+
+// footer CSS
+
+.footer { background-color: $LightDark; padding: 1rem 1rem 1rem 1rem; border-top: 4px solid $main; text-align: center; color: $gray;
+  i { font-size: 1em;  }
+  li { display: inline; font-size: 1em;}
+  h4 {  font-size: 1em; font-weight: 400; text-transform: uppercase; margin-top: 2.5rem; }
+  p, a { font-weight: 300; font-size: .8em;  margin-bottom: 0px; }
+  .copy { margin-top: 5px;
+    p { line-height: 2.3;}
+  }
+  .footer-links { list-style-type: none;
+    li { font-size: 1.4em; margin-right: 10px;
+      a { transition: all $transition;
+        &:hover { color: $text-color!important; }
+      }
+    }
+  }
+  .footer-links-nav {  margin-top: 5px;
+    li { margin-right: 20px; text-transform: lowercase;
+      a { transition: all $transition;
+        &:hover { color: $text-color!important; }
+      }
+    }
+  }
+}
