@@ -8,43 +8,43 @@
 @include foundation-grid;
 // @include foundation-flex-grid;
 @include foundation-typography;
-@include foundation-button;
-@include foundation-forms;
+// @include foundation-button;
+// @include foundation-forms;
 // @include foundation-range-input;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
-@include foundation-button-group;
-@include foundation-callout;
-@include foundation-card;
-@include foundation-close-button;
-@include foundation-menu;
-@include foundation-menu-icon;
-@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
-@include foundation-responsive-embed;
-@include foundation-label;
-@include foundation-media-object;
-@include foundation-off-canvas;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
+// @include foundation-button-group;
+// @include foundation-callout;
+// @include foundation-card;
+// @include foundation-close-button;
+// @include foundation-menu;
+// @include foundation-menu-icon;
+// @include foundation-drilldown-menu;
+// @include foundation-dropdown;
+// @include foundation-dropdown-menu;
+// @include foundation-responsive-embed;
+// @include foundation-label;
+// @include foundation-media-object;
+// @include foundation-off-canvas;
 @include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
+// @include foundation-pagination;
+// @include foundation-progress-bar;
 // @include foundation-progress-element;
 // @include foundation-meter-element;
-@include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
-@include foundation-switch;
-@include foundation-table;
-@include foundation-tabs;
-@include foundation-thumbnail;
-@include foundation-title-bar;
-@include foundation-tooltip;
-@include foundation-top-bar;
-@include foundation-visibility-classes;
-@include foundation-float-classes;
+// @include foundation-slider;
+// @include foundation-sticky;
+// @include foundation-reveal;
+// @include foundation-switch;
+// @include foundation-table;
+// @include foundation-tabs;
+// @include foundation-thumbnail;
+// @include foundation-title-bar;
+// @include foundation-tooltip;
+// @include foundation-top-bar;
+// @include foundation-visibility-classes;
+// @include foundation-float-classes;
 // @include foundation-flex-classes;
 
 @include motion-ui-transitions;
@@ -103,15 +103,15 @@
       @media #{$mq-mobile-normal}{ left: 0; height: 100%; width: 100%; position: absolute; }
     }
     .logo { margin: 1em 0; position: absolute; right: 360px; text-align: center; top: -8px; z-index: 5;
-      @media #{$mq-mobile-normal}{ position: absolute; transform: translate(50%, 0px); margin: 0 auto;  width: 60px; height: 50px; right: 50%; top: 5px; background: url("../images/crown.jpg.svg"); background-repeat: no-repeat;; background-size: contain;}
+      @media #{$mq-mobile-normal}{ position: absolute; transform: translate(50%, 0px); margin: 0 auto;  width: 60px; height: 50px; right: 50%; top: 5px; background: url("../../assets/img/crown.jpg.svg"); background-repeat: no-repeat;; background-size: contain;}
       @media #{$mq-tablet}{ margin: 0.5em 0; right: 280px; top: -20px; }
       img { background-position: contain; width: 300px;
         @media #{$mq-mobile-normal}{ width: 135px; height: 50px; opacity: 0;}
         @media #{$mq-tablet}{ width: 225px; }
        }
       }
-      .menuB { text-align: center; display: inline-block!important;
-        @media #{$mq-mobile-normal}{ display:none }
+      .menuB { text-align: center; display: inline-block!important; margin: 0 auto; width: 100%;
+        @media #{$mq-mobile-normal}{ display:none!important; }
         ul { list-style-type:none; transition: all $transition; line-height: 6; display: inline-block!important;
           li { border-radius: 20px; transition: all $transition;
             &:hover { background: $main;  }
@@ -164,15 +164,15 @@
   #home { background: white; width: 100%; height: 100%; }
 
 //start slider styles
-.slider { width: 100%; height: auto; transition: all $transition;
-  .white-shade { width: 100%; height: 720px; background: url("../images/slider-form.svg"); position: absolute; z-index: 3; left:0; background-repeat: no-repeat; background-size: contain; padding: 0; margin: 0;
+.slider { width: 100%; height: auto; transition: all $transition; position: relative;
+  @media #{$mq-mobile-normal}{ margin-top: 3em;}
+  .white-shade { width: 100%; height: 720px; background: url("../../assets/img/slider-form.svg"); position: absolute; z-index: 3; left:0; background-repeat: no-repeat; background-size: contain; padding: 0; margin: 0;
     @media #{$mq-tablet}{ height: 420px;}
     @media #{$mq-mobile-normal}{ display: none;
 
     }
   }
-  .orbit-container {
-      @media #{$mq-mobile-normal}{ margin-top: 57px; }
+
     .orbit-slide-number, .orbit-timer { z-index: 0; }
     .orbit-timer { width: 100%; top:0; left: 0;position: absolute;
       .orbit-progress { position: absolute; top: 0; left: 0; height: 4px;}
@@ -189,18 +189,12 @@
       right: 20px; z-index: 4;
     }
     .orbit-progress { background: $snow; }
-    .orbit-bullets-container {   margin: 0px; position: absolute; bottom:0px; top: inherit; right: 0px; z-index: 4;
-      .orbit-bullets { margin: 0px 50px 30px auto;
-        @media #{$mq-tablet}{ margin: 0px 50px 20px auto; }
-        li { transition: all $transition;  width: 0.9rem; height: 0.9rem; padding: 5px; background: $LightDark;
-          @media #{$mq-tablet}{ padding: 0px; }
+    .orbit-bullets { width: 150px; margin: 0px; position: absolute; bottom:0px; right: 0px; z-index:15!important;
+        button {margin: 0px 10px 30px auto;  transition: all $transition;  padding: 5px;  z-index:15;
+          @media #{$mq-tablet}{ padding: 0px; margin: 0px 10px 20px auto; width: 0.9rem; height: 0.9rem;  }
           @media #{$mq-mobile-normal}{ display: none;}
-          &:hover { background: $main;}
-          &:active { background: $main; }
         }
-      }
     }
-  }
 }
 .QuoteHolder { width: 100%; height: auto;
   .quoteBlok {
@@ -239,7 +233,7 @@
 
 
 #about { width: 100%; height: 100%;
-  .aboutPic { position: relative; background: url("../images/kaspasAbout.jpg"); background-repeat: no-repeat; background-size: cover; height: auto; min-height: 443px; width: 100%;  background-size: center center;
+  .aboutPic { position: relative; background: url("../../assets/img/kaspasAbout.jpg"); background-repeat: no-repeat; background-size: cover; height: auto; min-height: 443px; width: 100%;  background-size: center center;
     @media #{$mq-mobile-normal}{ margin-top: 57px; min-height: 200px; }
   }
   .add { width: 100%; height: 350px; padding: 50px 10px 10px 0px;
@@ -247,7 +241,7 @@
     &.black { background: $LightDark; }
     }
 
-  .white-shade { background-position: center bottom; bottom:0;  width: 100%; height: 70px; background: url("../images/about-form.svg"); position: absolute; z-index: 3; left:0; background-repeat: no-repeat; background-size: cover; padding: 0; margin: 0;
+  .white-shade { background-position: center bottom; bottom:0;  width: 100%; height: 70px; background: url("../../assets/img/about-form.svg"); position: absolute; z-index: 3; left:0; background-repeat: no-repeat; background-size: cover; padding: 0; margin: 0;
     @media #{$mq-mobile-normal}{ display: none;
 
     }

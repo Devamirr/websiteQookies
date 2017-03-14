@@ -1,134 +1,155 @@
 <section id="home">
-        <div id="header">
-            <div class="header-inner">
-                <div class="navbar">
-                    <a href="index.html">
-                        <div class="logo">
-                            <img src="{{root}}assets/img/Qookies-Logo.png" />
-                        </div>
-                    </a>
-                    <div class="menuB">
-                        <ul class="menu">
-                            <li class="leaf active"><a title="home" href="index.html">Home</a></li>
-                            <li class="leaf video"><a title="about" href="/pages/about.html">About</a></li>
-                            <li class="leaf"><a title="menu" href="/pages/menu.html">Menu</a></li>
-                            <li class="leaf"><a title="contact" href="/pages/contact.html">Contact</a></li>
+    <div id="header">
+        <div class="header-inner">
+            <div class="navbar">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="{{root}}assets/img/Qookies-Logo.png" />
+                    </div>
+                </a>
+                <div class="menuB">
+                    <ul class="menu">
+                        <li class="leaf active"><a title="home" href="index.html">Home</a></li>
+                        <li class="leaf video"><a title="about" href="about.html">About</a></li>
+                        <li class="leaf"><a title="menu" href="menu.html">Menu</a></li>
+                        <li class="leaf"><a title="contact" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <nav role="navigation">
+                    <div id="menuToggle">
+                        <input type="checkbox" />
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul id="menu">
+                            <a href="index.html">
+                                <li class="activeMob">Home</li>
+                            </a>
+                            <hr class="line-menu">
+                            <a href="about.html">
+                                <li>About</li>
+                            </a>
+                            <hr class="line-menu">
+                            <a href="menu.html">
+                                <li>Menu</li>
+                            </a>
+                            <hr class="line-menu">
+                            <a href="contact.html">
+                                <li>Contact</li>
+                            </a>
                         </ul>
                     </div>
-                    <nav role="navigation">
-                        <div id="menuToggle">
-                            <input type="checkbox" />
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <ul id="menu">
-                                <a href="index.html">
-                                    <li class="activeMob">Home</li>
-                                </a>
-                                <hr class="line-menu">
-                                <a href="/pages/about.html">
-                                    <li>About</li>
-                                </a>
-                                <hr class="line-menu">
-                                <a href="/pages/menu.html">
-                                    <li>Menu</li>
-                                </a>
-                                <hr class="line-menu">
-                                <a href="/pages/contact.html">
-                                    <li>Contact</li>
-                                </a>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+                </nav>
             </div>
         </div>
-        <!--end header-->
-        <!--begin header-->
-        <div class="slider">
-            <div class="white-shade"></div>
-            <ul class="example-orbit" data-orbit data-options="pause_on_click:false; pause_on_hover: false; resume_on_mouseout: false;">
-                <li>
-                    <img src="{{root}}assets/img/slide2.jpg" alt="slide 1" />
-                    <div class="orbit-caption">
-                        <!-- Caption One. -->
-                    </div>
-                </li>
-                <li class="active">
-                    <img src="../images/slide2.jpg" alt="slide 2" />
-                    <div class="orbit-caption">
-                        <!-- Caption Two. -->
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/slide2.jpg" alt="slide 3" />
-                    <div class="orbit-caption">
-                        <!-- Caption Three. -->
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/slide2.jpg" alt="slide 3" />
-                    <div class="orbit-caption">
-                        <!-- Caption Three. -->
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/slide2.jpg" alt="slide 3" />
-                    <div class="orbit-caption">
-                        <!-- Caption Three. -->
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!--end slider-->
-        <!--begin quotte-->
-        <div class="row QuoteHolder">
-            <div class="quoteBlok columns large-8 large-offset-2 medium-10 medium-offset-1 small-10 small-offset-1">
-                <div class="quotewrap">
-                    <h5 class="quote text-center"> Life shrinks or expands in proportion to one’s courage.</h5>
-                    <p class="author text-center">Anais Nin</p>
+    </div>
+    <!--end header-->
+    <!--begin header-->
+    <div class="slider" role="region" aria-label="hmm" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out">
+      <!-- <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit> -->
+      <div class="white-shade"></div>
+        <ul class="orbit-container">
+            <button class="orbit-previous">&#9664;&#xFE0E;</button>
+            <button class="orbit-next">&#9654;&#xFE0E;</button>
+            <li class="is-active orbit-slide">
+                <img class="orbit-image" src="{{root}}assets/img/slide2.jpg" alt="Space">
+            </li>
+            <li class="orbit-slide">
+                <img class="orbit-image" src="{{root}}assets/img/slide2.jpg" alt="Space">
+            </li>
+            <li class="orbit-slide">
+                <img class="orbit-image" src="{{root}}assets/img/slide2.jpg" alt="Space">
+            </li>
+            <li class="orbit-slide">
+                <img class="orbit-image" src="{{root}}assets/img/slide2.jpg" alt="Space">
+            </li>
+        </ul>
+        <nav class="orbit-bullets">
+            <button class="is-active" data-slide="0"></button>
+            <button data-slide="1"></button>
+            <button data-slide="2"></button>
+            <button data-slide="3"></button>
+        </nav>
+    </div>
+    <!-- <div class="slider">
+        <div class="white-shade"></div>
+        <ul class="example-orbit" data-orbit data-options="pause_on_click:false; pause_on_hover: false; resume_on_mouseout: false;">
+            <li>
+                <img src="{{root}}assets/img/slide2.jpg" alt="slide 1" />
+                <div class="orbit-caption">
                 </div>
-                <div class="starCol columns large-8 large-offset-2 text-center">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
+            </li>
+            <li class="active">
+                <img src="../images/slide2.jpg" alt="slide 2" />
+                <div class="orbit-caption">
                 </div>
+            </li>
+            <li>
+                <img src="../images/slide2.jpg" alt="slide 3" />
+                <div class="orbit-caption">
+                </div>
+            </li>
+            <li>
+                <img src="../images/slide2.jpg" alt="slide 3" />
+                <div class="orbit-caption">
+                </div>
+            </li>
+            <li>
+                <img src="../images/slide2.jpg" alt="slide 3" />
+                <div class="orbit-caption">
+                </div>
+            </li>
+        </ul>
+    </div> -->
+    <!--end slider-->
+    <!--begin quotte-->
+    <div class="row QuoteHolder">
+        <div class="quoteBlok columns large-8 large-offset-2 medium-10 medium-offset-1 small-10 small-offset-1">
+            <div class="quotewrap">
+                <h5 class="quote text-center"> Life shrinks or expands in proportion to one’s courage.</h5>
+                <p class="author text-center">Anais Nin</p>
+            </div>
+            <div class="starCol columns large-8 large-offset-2 text-center">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
             </div>
         </div>
-        <!--end quotte-->
-        <!--begin adds-->
-        <div class="add grad">
-          <div class="row">
+    </div>
+    <!--end quotte-->
+    <!--begin adds-->
+    <div class="add grad">
+        <div class="row">
             <div class="column large-6 medium-6 small-12">
-              <h4>BETTER WITH BUTTER</h4>
-              <p>Looking for a little treat every now and then? Then look in our case and check out our new Cookie Butter Bars. Available in single bars or trays for sharing.</p>
-              <a href="More details medium-6 small-12"></a>
+                <h4>BETTER WITH BUTTER</h4>
+                <p>Looking for a little treat every now and then? Then look in our case and check out our new Cookie Butter Bars. Available in single bars or trays for sharing.</p>
+                <a href="More details medium-6 small-12"></a>
             </div>
             <div class="column large-6"></div>
-          </div>
         </div>
-        <div class="add white secondBlok text-center">
-          <div class="row">
+    </div>
+    <div class="add white secondBlok text-center">
+        <div class="row">
             <div class="column large-6"></div>
             <div class="column large-6 medium-6 small-12">
-              <h4>BETTER WITH BUTTER</h4>
-              <p>Looking for a little treat every now and then? Then look in our case and check out our new Cookie Butter Bars. Available in single bars or trays for sharing.</p>
-              <a href="More details medium-6 small-12"></a>
+                <h4>BETTER WITH BUTTER</h4>
+                <p>Looking for a little treat every now and then? Then look in our case and check out our new Cookie Butter Bars. Available in single bars or trays for sharing.</p>
+                <a href="More details medium-6 small-12"></a>
             </div>
-          </div>
         </div>
-        <div class="add grad">
-          <div class="row">
+    </div>
+    <div class="add grad">
+        <div class="row">
             <div class="column large-6 medium-6 small-12">
-              <h4>THE PLACE FOR ONE-OF-A-KINDS</h4>
-              <p>Looking for a little treat every now and then? Then look in our case and check out our new Cookie Butter Bars. Available in single bars or trays for sharing.</p>
-              <a href="More details medium-6 small-12"></a>
+                <h4>THE PLACE FOR ONE-OF-A-KINDS</h4>
+                <p>Looking for a little treat every now and then? Then look in our case and check out our new Cookie Butter Bars. Available in single bars or trays for sharing.</p>
+                <a href="More details medium-6 small-12"></a>
             </div>
             <div class="column large-6"></div>
-          </div>
         </div>
+    </div>
 
-        <!--end adds-->
-    </section>
+    <!--end adds-->
+</section>
