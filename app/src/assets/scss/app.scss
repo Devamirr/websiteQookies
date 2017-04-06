@@ -102,12 +102,12 @@
     .navbar {  top: 0; height: 100%;
       @media #{$mq-mobile-normal}{ left: 0; height: 100%; width: 100%; position: absolute; }
     }
-    .logo { margin: 1em 0; position: absolute; right: 360px; text-align: center; top: -8px; z-index: 5;
+    .logo { margin: 1.4em 0; width: 300px; position: absolute; right: 360px; text-align: center; top: -8px; z-index: 5;
       @media #{$mq-mobile-normal}{ position: absolute; transform: translate(50%, 0px); margin: 0 auto;  width: 60px; height: 50px; right: 50%; top: 5px; background: url("../../assets/img/crown.jpg.svg"); background-repeat: no-repeat;; background-size: contain;}
-      @media #{$mq-tablet}{ margin: 0.5em 0; right: 280px; top: -20px; }
-      img { background-position: contain; width: 300px;
-        @media #{$mq-mobile-normal}{ width: 135px; height: 50px; opacity: 0;}
-        @media #{$mq-tablet}{ width: 225px; }
+      @media #{$mq-tablet}{ margin: 2.3em 0; right: 244px; top: -20px; }
+      img { background-position: contain; width: 150px;
+        @media #{$mq-mobile-normal}{ width: 180px; height: 50px; opacity: 0;}
+        @media #{$mq-tablet}{ width: 150px; }
        }
       }
       .menuB { text-align: center; display: inline-block!important; margin: 0 auto; width: 100%;
@@ -162,8 +162,12 @@
   //
   //start homepage styles
   #home { background: white; width: 100%; height: 100%;
-    .grad {
-      img { background-repeat: no-repeat; max-width: 60%; height: auto; background-size: contain; }
+    &.grad { padding:0; }
+    .grad { padding:0;
+      img { background-repeat: no-repeat; max-width: 50%!important; height: auto; background-size: contain;
+        @media #{$mq-tablet}{ max-width: 80%!important }
+        @media #{$mq-mobile-normal}{ max-width: 100%!important;}
+      }
      }
   }
 
@@ -186,10 +190,10 @@
       @media #{$mq-tablet}{ display:none;}
       @media #{$mq-mobile-normal}{ display: none;}
      }
-    .orbit-prev { transition: all 300ms ease-in;
-      left: 20px; z-index: 4;
+    .orbit-previous { transition: all 300ms ease-in;
+      left: 20px!important; z-index: 4;
     }
-    .orbit-next {
+    .orbit-next { transition: all 300ms ease-in;
       right: 20px; z-index: 4;
     }
     .orbit-progress { background: $snow; }

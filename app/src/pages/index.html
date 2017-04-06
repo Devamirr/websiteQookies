@@ -4,7 +4,7 @@
             <div class="navbar">
                 <a href="index.html">
                     <div class="logo">
-                        <img src="{{root}}assets/img/Qookies-Logo.png" />
+                        <img src="{{root}}assets/img/Round-logo.svg" />
                     </div>
                 </a>
                 <div class="menuB">
@@ -91,14 +91,17 @@
     </div>
     <!--end quotte-->
     <!--begin adds-->
-    <div class="add grad">
+    <div class="add grad actie">
         <div class="row">
-            <div class="column large-4 large-offset-2 medium-6 small-12 text-left">
-                <h1 id="title"></h1>
-                <p id="subText"></p>
+          <div class="column large 12 text-center">
+            <h3>VANDAAG IN DE ACTIE</h3>
+          </div>
+            <div class="column large-5 large-offset-1 medium-4 medium-offset-2 small-12 text-center">
+                <h3 id="title"></h3>
+                <h5 id="subText"></h5>
                 <a href=""></a>
             </div>
-            <div class="column large-6 medium-6 small-12"><img id="yourImageId" alt="DEMO" /></div>
+            <div class="column large-6 medium-6 medium-offset-0 small-offset-3 small-6"><img id="yourImageId" alt="DEMO" /></div>
         </div>
     </div>
     <div class="add white secondBlok text-center">
@@ -129,8 +132,7 @@
             weekday = today.getDay();
             showImages = [];
             myPhotos = ["{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/qookies-Logo.png",
-                "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg"
-            ]; // You must specify the path or file name of your images that will be loaded in a weekday basis.
+                "{{root}}assets/img/kaspasAbout.jpg","{{root}}assets/img/kaspasAbout.jpg"]; // You must specify the path or file name of your images that will be loaded in a weekday basis.
             if (document.images) {
                 for (var x = 0; x < myPhotos.length; x++) {
                     showImages[x] = new Image();
@@ -146,8 +148,21 @@
 
         var d = new Date();
         var n = d.getDay();
-        var titles = ['title 1', 'title 2', 'title 3', 'title 4', 'title 5', 'title 6', 'title 7'];
-        var subtext = ['text 1', 'text 2', 'text 3', 'text 4', 'text 5', 'text 6', 'text 7'];
+        var titles = ['PIECE OF CAKE',
+                      'ALLE MILKSHAKES',
+                      'ICE CREAM',
+                      'WAFELS',
+                      'COOKIEDOUGH',
+                      'WAFELS',
+                      'GEEN ACTIE VANDAAG'
+                     ];
+        var subtext = ['Bij aankoop van onze diverse varianten taarten krijgt u een kop koffie of thee helemaal gratis',
+                       'Voor maar 2 Euro. Kuze uit onze hele assortiment. Proef ze allemaal. ',
+                       'Een leuke dag om de kinderen mee te nemen naar qookies, want 2 bollen ijs halen is betalen',
+                       'Bij aankoop van een Wafel gratis frisdrank naar keuze',
+                       'Bij aankoop van de diverse smaken Qookiedough gratis frisdrank naar keuze',
+                       'Bij aankoop van een Wafel gratis frisdrank naar keuze',
+                       'vanaf morgen gaat de actie in'];
 
         document.getElementById("title").innerHTML = titles[n - 1];
         document.getElementById("subText").innerHTML = subtext[n - 1];
