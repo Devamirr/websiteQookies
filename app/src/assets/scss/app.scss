@@ -161,7 +161,11 @@
 
   //
   //start homepage styles
-  #home { background: white; width: 100%; height: 100%; }
+  #home { background: white; width: 100%; height: 100%;
+    .grad {
+      img { background-repeat: no-repeat; max-width: 60%; height: auto; background-size: contain; }
+     }
+  }
 
 //start slider styles
 .slider { width: 100%; height: auto; transition: all $transition; position: relative;
@@ -182,7 +186,7 @@
       @media #{$mq-tablet}{ display:none;}
       @media #{$mq-mobile-normal}{ display: none;}
      }
-    .orbit-prev {
+    .orbit-prev { transition: all 300ms ease-in;
       left: 20px; z-index: 4;
     }
     .orbit-next {

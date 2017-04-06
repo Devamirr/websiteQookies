@@ -46,8 +46,8 @@
     <!--end header-->
     <!--begin header-->
     <div class="slider" role="region" aria-label="hmm" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out">
-      <!-- <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit> -->
-      <div class="white-shade"></div>
+        <!-- <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit> -->
+        <div class="white-shade"></div>
         <ul class="orbit-container">
             <button class="orbit-previous">&#9664;&#xFE0E;</button>
             <button class="orbit-next">&#9654;&#xFE0E;</button>
@@ -71,36 +71,7 @@
             <button data-slide="3"></button>
         </nav>
     </div>
-    <!-- <div class="slider">
-        <div class="white-shade"></div>
-        <ul class="example-orbit" data-orbit data-options="pause_on_click:false; pause_on_hover: false; resume_on_mouseout: false;">
-            <li>
-                <img src="{{root}}assets/img/slide2.jpg" alt="slide 1" />
-                <div class="orbit-caption">
-                </div>
-            </li>
-            <li class="active">
-                <img src="../images/slide2.jpg" alt="slide 2" />
-                <div class="orbit-caption">
-                </div>
-            </li>
-            <li>
-                <img src="../images/slide2.jpg" alt="slide 3" />
-                <div class="orbit-caption">
-                </div>
-            </li>
-            <li>
-                <img src="../images/slide2.jpg" alt="slide 3" />
-                <div class="orbit-caption">
-                </div>
-            </li>
-            <li>
-                <img src="../images/slide2.jpg" alt="slide 3" />
-                <div class="orbit-caption">
-                </div>
-            </li>
-        </ul>
-    </div> -->
+
     <!--end slider-->
     <!--begin quotte-->
     <div class="row QuoteHolder">
@@ -109,7 +80,7 @@
                 <h5 class="quote text-center"> Life shrinks or expands in proportion to one’s courage.</h5>
                 <p class="author text-center">Anais Nin</p>
             </div>
-            <div class="starCol columns large-8 large-offset-2 text-center">
+            <div class="starCol columns text-center">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -122,12 +93,12 @@
     <!--begin adds-->
     <div class="add grad">
         <div class="row">
-            <div class="column large-6 medium-6 small-12">
-                <h4>BETTER WITH BUTTER</h4>
-                <p>Looking for a little treat every now and then? Then look in our case and check out our new Cookie Butter Bars. Available in single bars or trays for sharing.</p>
-                <a href="More details medium-6 small-12"></a>
+            <div class="column large-4 large-offset-2 medium-6 small-12 text-left">
+                <h1 id="title"></h1>
+                <p id="subText"></p>
+                <a href=""></a>
             </div>
-            <div class="column large-6"></div>
+            <div class="column large-6 medium-6 small-12"><img id="yourImageId" alt="DEMO" /></div>
         </div>
     </div>
     <div class="add white secondBlok text-center">
@@ -150,6 +121,36 @@
             <div class="column large-6"></div>
         </div>
     </div>
+    <script type="text/javascript">
+        var dailyPhotos;
+        var today, img;
+        dailyPhotos = function() {
+            today = new Date();
+            weekday = today.getDay();
+            showImages = [];
+            myPhotos = ["{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/qookies-Logo.png",
+                "{{root}}assets/img/kaspasAbout.jpg", "{{root}}assets/img/kaspasAbout.jpg"
+            ]; // You must specify the path or file name of your images that will be loaded in a weekday basis.
+            if (document.images) {
+                for (var x = 0; x < myPhotos.length; x++) {
+                    showImages[x] = new Image();
+                    showImages[x].src = myPhotos[x];
+                }
+                img = ((document.getElementById) ? document.getElementById("yourImageId") : document.images.yourImageId); // Specify the id of the image that will get raplaced daily.
+                img.src = showImages[weekday].src;
+                img.alt = myPhotos[weekday];
+            }
+            return false; // If the browser can't display images, then EXIT FUNCTION.
+        };
+        window.onload = dailyPhotos;
 
+        var d = new Date();
+        var n = d.getDay();
+        var titles = ['title 1', 'title 2', 'title 3', 'title 4', 'title 5', 'title 6', 'title 7'];
+        var subtext = ['text 1', 'text 2', 'text 3', 'text 4', 'text 5', 'text 6', 'text 7'];
+
+        document.getElementById("title").innerHTML = titles[n - 1];
+        document.getElementById("subText").innerHTML = subtext[n - 1];
+    </script>
     <!--end adds-->
 </section>
