@@ -272,21 +272,66 @@
       .paddLeft { margin-left: 10px;  transform: translate(0px,-4px); }
     }
   }
-  .tes {
-    #portfolio { width:100%; margin:20px 0px; }
-    .tile { float:left; min-height:300px; padding: 20px; border:1px #fff solid;
-       &:hover { opacity: 0.5; }
-     }
-    .web { background:#00C5CD;}
-    .flyers { background: #CC3232;}
-    .bcards { background: #ddd; }
-    p{ padding:10px; border-bottom: 1px #ccc dotted; text-decoration: none; font-family: Arial; text-transform:uppercase; font-size: 12px; color: #333; display:block; float:left;}
-    p:hover { cursor:pointer; background: #333; color:#eee; }
-  }
+  .c-filter { overflow: hidden; min-height: 600px; }
 
+   /**
+    * Make the targets hover at the top of the viewport so that we never get
+    * awkward page jumps when filtering.
+    */
+   .c-filter__target { position: fixed; }
+   .c-filter__links { padding: 1em; margin-bottom: 1em; background-color: #fff; border-bottom: 1px solid #e5e5e5; }
+   .c-filter__link { display: inline-block; padding: 0.5em 1em; border-radius: 100px; background-color: rgba(0, 0, 0, 0); transition: 0.333s; }
+   .c-filter__link--reset {  border-right: 1px solid #e5e5e5; border-radius: 0; }
+   .c-filter__item { float: left; width: calc(33.333333333% - 1em); margin-right: 0.5em; margin-bottom: 1em; margin-left: 0.5em; transition: 0.333s; }
+   /** * If we haven’t targeted anything, ensure all items are turned on.*/
+   .c-filter__target:not(:target) ~ .c-filter__item { visibility: visible; display: block; opacity: 1;
+   /* "both" tells the browser to use the above opacity
+   at the end of the animation (best practice) */
+   -webkit-animation: display-none-transition 1s both;
+   animation: display-none-transition 1s both;
+   }
+   /** * As soon as we target anything, turn all items ‘off’.*/
+   .c-filter__target:target ~ .c-filter__item { opacity: 0; visibility: hidden; display: none; }
+   %current-item { opacity: 1; visibility: visible; display:block;
+   /* "both" tells the browser to use the above opacity
+   at the end of the animation (best practice) */
+   -webkit-animation: display-none-transition 1s both;
+   animation: display-none-transition 1s both;
+   }
+   %current-link { background-color: #fafafa; pointer-events: none; }
+   @-webkit-keyframes display-none-transition {
+      0% {
+       opacity: 0;
+     }
+   }
+   @keyframes display-none-transition {
+     0% {
+       opacity: 0;
+     }
+   }
+   @each $tag in html, css, accessibility, performance, vim {
+   /** * Turn specific items back on when they have been targeted. */
+   [id="tag:#{$tag}"]:target ~ [data-tag~="#{$tag}"] {
+     @extend %current-item;
+   }
+   /**  * Highlight the currently filtered link. */
+   [id="tag:#{$tag}"]:target ~ .c-filter__links [href="#tag:#{$tag}"] {
+     @extend %current-link;
+   }
+
+ }
+
+
+
+
+
+.c-article {
+  background-color: #fff;
+  padding: 1em;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-
+}
 
 
 // footer CSS
