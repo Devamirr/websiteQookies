@@ -104,7 +104,7 @@
     }
     .logo { margin: 1.4em 0; width: 300px; position: absolute; right: 360px; text-align: center; top: -8px; z-index: 5;
       @media #{$mq-mobile-normal}{ position: absolute; transform: translate(50%, 0px); margin: 0 auto;  width: 60px; height: 50px; right: 50%; top: 5px; background: url("../../assets/img/crown.jpg.svg"); background-repeat: no-repeat;; background-size: contain;}
-      @media #{$mq-tablet}{ margin: 2.3em 0; right: 244px; top: -20px; }
+      @media #{$mq-tablet}{ margin: 2.3em 0; right: 234px; top: -20px; }
       img { background-position: contain; width: 150px;
         @media #{$mq-mobile-normal}{ width: 180px; height: 50px; opacity: 0;}
         @media #{$mq-tablet}{ width: 150px; }
@@ -261,7 +261,7 @@
 }
 
 #Menu {
-  .headTekst { padding: 70px;
+  .headTekst { padding: 70px 70px 20px 70px;
     @media #{$mq-mobile-normal}{ padding: 80px 0px 0px 0px; font-size: 1em; }
     h1 {
       @media #{$mq-mobile-normal}{ font-size: 1.5em; }
@@ -279,10 +279,18 @@
     * awkward page jumps when filtering.
     */
    .c-filter__target { position: fixed; }
-   .c-filter__links { padding: 1em; margin-bottom: 1em; background-color: #fff; border-bottom: 1px solid #e5e5e5; }
+   .c-filter__links { padding: 1em; margin-bottom: 1em; background-color: #fff; border-bottom: 1px solid #e5e5e5;
+      ul { text-align: center; padding:0px;
+        li { display: inline; padding: 0 1%; }
+      }
+
+   }
    .c-filter__link { display: inline-block; padding: 0.5em 1em; border-radius: 100px; background-color: rgba(0, 0, 0, 0); transition: 0.333s; }
    .c-filter__link--reset {  border-right: 1px solid #e5e5e5; border-radius: 0; }
-   .c-filter__item { float: left; width: calc(33.333333333% - 1em); margin-right: 0.5em; margin-bottom: 1em; margin-left: 0.5em; transition: 0.333s; }
+   .c-filter__item { float: left; width: calc(33.333333333% - 1em); margin-right: 0.5em; margin-bottom: 1em; margin-left: 0.5em; transition: 0.333s;
+      @media #{$mq-tablet}{ width: calc(50% - 1em); }
+      @media #{$mq-mobile-normal}{  width: calc(100% - 1em); }
+   }
    /** * If we haven’t targeted anything, ensure all items are turned on.*/
    .c-filter__target:not(:target) ~ .c-filter__item { visibility: visible; display: block; opacity: 1;
    /* "both" tells the browser to use the above opacity
@@ -309,7 +317,7 @@
        opacity: 0;
      }
    }
-   @each $tag in html, css, accessibility, performance, vim {
+   @each $tag in Waffels, Ice, Shakes, Coffee, Chai {
    /** * Turn specific items back on when they have been targeted. */
    [id="tag:#{$tag}"]:target ~ [data-tag~="#{$tag}"] {
      @extend %current-item;
