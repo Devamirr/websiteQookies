@@ -104,7 +104,7 @@
     }
     .logo { margin: 1.4em 0; width: 300px; position: absolute; right: 360px; text-align: center; top: -8px; z-index: 5;
       @media #{$mq-mobile-normal}{ position: absolute; transform: translate(50%, 0px); margin: 0 auto;  width: 60px; height: 50px; right: 50%; top: 5px; background: url("../../assets/img/crown.jpg.svg"); background-repeat: no-repeat;; background-size: contain;}
-      @media #{$mq-tablet}{ margin: 2.3em 0; right: 234px; top: -20px; }
+      @media #{$mq-tablet}{ margin: 2.3em 0; right: 244px; top: -20px; }
       img { background-position: contain; width: 150px;
         @media #{$mq-mobile-normal}{ width: 180px; height: 50px; opacity: 0;}
         @media #{$mq-tablet}{ width: 150px; }
@@ -319,25 +319,146 @@
    }
    @each $tag in Waffels, Ice, Shakes, Coffee, Chai {
    /** * Turn specific items back on when they have been targeted. */
-   [id="tag:#{$tag}"]:target ~ [data-tag~="#{$tag}"] {
-     @extend %current-item;
+     [id="tag:#{$tag}"]:target ~ [data-tag~="#{$tag}"] {
+       @extend %current-item;
+     }
+     /**  * Highlight the currently filtered link. */
+     [id="tag:#{$tag}"]:target ~ .c-filter__links [href="#tag:#{$tag}"] {
+       @extend %current-link;
+     }
    }
-   /**  * Highlight the currently filtered link. */
-   [id="tag:#{$tag}"]:target ~ .c-filter__links [href="#tag:#{$tag}"] {
-     @extend %current-link;
-   }
-
- }
-
-
-
-
-
-.c-article {
-  background-color: #fff;
-  padding: 1em;
-  border-bottom: 1px solid #e5e5e5;
-}
+  .block { background:white; }
+  .product_block {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 340px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    .product_header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      -webkit-transition: -webkit-transform 0.43s cubic-bezier(0.32, 1.259, 0.375, 1.15);
+      transition: -webkit-transform 0.43s cubic-bezier(0.32, 1.259, 0.375, 1.15);
+      transition: transform 0.43s cubic-bezier(0.32, 1.259, 0.375, 1.15);
+      transition: transform 0.43s cubic-bezier(0.32, 1.259, 0.375, 1.15), -webkit-transform 0.43s cubic-bezier(0.32, 1.259, 0.375, 1.15);
+      .product_heart {
+        float: left;
+        margin-top: 15px;
+        padding-left: 30px;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .product_tag {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        text-align: center;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        color: #fff;
+        text-transform: uppercase;
+        font-family: 'Ropa Sans', sans-serif;
+        background-color: #3b4068;
+        padding: 4px 15px;
+        border-radius: 0.8em;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+      .product_shop {
+        float: right;
+        margin-top: 15px;
+        padding-right: 30px;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    .product_img {
+      margin: 0 auto;
+      width: 95%;
+      height: 260px;
+      background-size: contain;
+      background-position: 50% 80%;
+      background-repeat: no-repeat;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: -webkit-transform 0.3s ease-in-out;
+      transition: -webkit-transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+      transition: all 900ms ease;
+    }
+    .product_info {
+      transform: translate(0px, 200px);
+      text-align: center;
+      padding-top: 20px;
+      .product_title {
+        font-size: 16px;
+        font-family: 'Ropa Sans', sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      .product_subtitle {
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: #999;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+      .product_price {
+        font-family: 'Ropa Sans', sans-serif;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 700;
+        span {
+          text-decoration: line-through;
+          color: #fc7070;
+          padding-left: 9px;
+        }
+      }
+    }
+    &.active {
+      transition: all 300ms ease;
+      background-color: #3b4068;
+      color: #fff;
+      .product_header {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        .product_tag {
+          background-color: #fff;
+          color: #3b4068;
+        }
+      }
+      .product_img {
+        transition: all 300ms ease-in-out;
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+        background-position: 30% 30%;
+        width: 40%;
+        -ms-transform: rotate(20deg);
+        /* IE 9 */
+        -webkit-transform: rotate(20deg);
+        /* Safari */
+        transform: rotate(20deg);
+      }
+      .product_info {
+        transition: all 300ms ease;
+        transform: translate(0px, -150px);
+        text-align: center;
+        padding-top: 20px;
+      }
+    }
+  }
 
 }
 
