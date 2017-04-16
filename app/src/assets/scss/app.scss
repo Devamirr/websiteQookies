@@ -272,21 +272,44 @@
       .paddLeft { margin-left: 10px;  transform: translate(0px,-4px); }
     }
   }
+
+
+
   .c-filter { overflow: hidden; min-height: 600px; }
+  .waf {  width: 25px; height: 25px; background:url(../../assets/img/icon/wafel.svg); background-repeat: no-repeat; background-size: contain;}
+  .ice {  width: 25px; height: 25px; background:url(../../assets/img/icon/ice.svg);background-repeat: no-repeat; background-size: contain; }
+  .shakes {  width: 25px; height: 25px; background:url(../../assets/img/icon/milkshake.svg); background-repeat: no-repeat; background-size: contain;}
+  .cof {  width: 25px; height: 25px; background:url(../../assets/img/icon/coffee.svg); background-repeat: no-repeat; background-size: contain;}
+  .chai {  width: 25px; height: 25px; background:url(../../assets/img/icon/chai.svg);background-repeat: no-repeat; background-size: contain; }
 
    /**
     * Make the targets hover at the top of the viewport so that we never get
     * awkward page jumps when filtering.
-    */
-   .c-filter__target { position: fixed; }
-   .c-filter__links { padding: 1em; margin-bottom: 1em; background-color: #fff; border-bottom: 1px solid #e5e5e5;
-      ul { text-align: center; padding:0px;
-        li { display: inline; padding: 0 1%; }
-      }
 
+    */
+   .c-filter__target { position: fixed;  }
+   .c-filter__links { padding: 1em; margin-bottom: 1em; background-color: #fff; border-bottom: 1px solid #e5e5e5;
+      ul { text-align: center; padding-bottom: 10px;
+        li { display: inline-block; padding: 0 1%; transform: translate(0px,10px);
+          a { height: 100%; display: block;     height: 40px;
+            p { float:left; margin:0; text-transform: initial; }
+            .icon { float:left; background-position: center center;  margin-right: 10px;}
+            .waf {  width: 25px; height: 25px; background:url(../../assets/img/icon/wafel.svg); background-repeat: no-repeat; background-size: contain;}
+            .ice {  width: 25px; height: 25px; background:url(../../assets/img/icon/ice.svg);background-repeat: no-repeat; background-size: contain; }
+            .shakes {  width: 25px; height: 25px; background:url(../../assets/img/icon/milkshake.svg); background-repeat: no-repeat; background-size: contain;}
+            .cof {  width: 25px; height: 25px; background:url(../../assets/img/icon/coffee.svg); background-repeat: no-repeat; background-size: contain;}
+            .chai {  width: 25px; height: 25px; background:url(../../assets/img/icon/chai.svg);background-repeat: no-repeat; background-size: contain; }
+          }
+        }
+      }
+    }
+   .c-filter__link {   height: 40px; display: inline-block; padding: 0.5em 1em; border-radius: 100px; background-color: rgba(0, 0, 0, 0); transition: 0.333s;
+      &:hover { background: $LightDark; color: $snow;
+      }
    }
-   .c-filter__link { display: inline-block; padding: 0.5em 1em; border-radius: 100px; background-color: rgba(0, 0, 0, 0); transition: 0.333s; }
-   .c-filter__link--reset {  border-right: 1px solid #e5e5e5; border-radius: 0; }
+   .c-filter__link--reset {  border-radius: 20px; border-right: 1px solid #e5e5e5;background:none!important;
+      &:hover{ color: $main; }
+   }
    .c-filter__item { float: left; width: calc(33.333333333% - 1em); margin-right: 0.5em; margin-bottom: 1em; margin-left: 0.5em; transition: 0.333s;
       @media #{$mq-tablet}{ width: calc(50% - 1em); }
       @media #{$mq-mobile-normal}{  width: calc(100% - 1em); }
@@ -306,7 +329,7 @@
    -webkit-animation: display-none-transition 1s both;
    animation: display-none-transition 1s both;
    }
-   %current-link { background-color: #fafafa; pointer-events: none; }
+   %current-link { background-color: $LightDark; pointer-events: none; color: $snow; }
    @-webkit-keyframes display-none-transition {
       0% {
        opacity: 0;
@@ -372,13 +395,14 @@
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
       }
-      .product_shop {
+      .product_icon {
         float: right;
         margin-top: 15px;
-        padding-right: 30px;
-        img {
-          width: 20px;
-          height: 20px;
+        padding-right: 20px;
+        span {
+          display: block;
+          width: 30px;
+          height: 30px;
         }
       }
     }
@@ -411,8 +435,9 @@
         font-size: 12px;
         font-weight: 300;
         letter-spacing: 1px;
-        color: #999;
+        color: $snow;
         margin: 0;
+        padding: 0px 20px;
         margin-bottom: 15px;
       }
       .product_price {
@@ -430,7 +455,7 @@
     &.active {
       transition: all 300ms ease;
       background-color: #3b4068;
-      color: #fff;
+      color: $main;
       .product_header {
         -webkit-transform: translateY(0);
         transform: translateY(0);
