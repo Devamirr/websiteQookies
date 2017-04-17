@@ -8,8 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <FilesMatch ".(ttf|otf|woff)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
   </head>
   <body>
+    <div class="loader">
+      <div class="dotHolder">
+        <div class="dot waf"></div>
+        <div class="dot ice"></div>
+        <div class="dot shakes"></div>
+        <div class="dot cof"></div>
+        <div class="dot chai"></div>
+      </div>
+    </div>
 
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
     {{> body}}
@@ -29,9 +41,10 @@
             </div>
             <div class="small-12 medium-2 large-2 columns">
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/qookies.nl/?hl=nl"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.facebook.com/qookiesnl/?fref=ts"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/qookiesnl"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.snapchat.com/add/qookies.nl"><i class="fa fa-snapchat" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -39,5 +52,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css"></script>
     <script src="{{root}}assets/js/app.js"></script>
+    <script type="text/javascript">
+$(window).load(function() {
+	$(".loader").animate({ height: 0, opacity: 0 }, 'slow');
+})
+// $(window).load(function() {
+// 	$(".loader").fadeOut("slow");
+// })
+</script>
   </body>
 </html>
