@@ -6,18 +6,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Premium Desserts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
-    <FilesMatch ".(ttf|otf|woff)$">
-    Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
+
   </head>
   <body>
     <div class="loader">
       <div class="dotHolder">
+        <div class="dot shakes"></div>
         <div class="dot waf"></div>
         <div class="dot ice"></div>
-        <div class="dot shakes"></div>
         <div class="dot cof"></div>
         <div class="dot chai"></div>
       </div>
@@ -26,7 +25,7 @@
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
     {{> body}}
 
-
+    <div class="bottomBar"></div>
     <footer class="footer">
         <div class="row full-width">
             <div class="copy small-12 medium-6 large-7 columns large-text-left medium-text-left small-text-center">
@@ -44,7 +43,7 @@
                     <li><a href="https://www.instagram.com/qookies.nl/?hl=nl"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                     <li><a href="https://www.facebook.com/qookiesnl/?fref=ts"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                     <li><a href="https://twitter.com/qookiesnl"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.snapchat.com/add/qookies.nl"><i class="fa fa-snapchat" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.snapchat.com/add/qookies.nl"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -60,5 +59,7 @@ $(window).load(function() {
 // 	$(".loader").fadeOut("slow");
 // })
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuEzPkLFkhPSoLjPKHcP4ix83YMSQ9d_A&callback=initMap"
+  async defer></script>
   </body>
 </html>
