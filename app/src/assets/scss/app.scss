@@ -119,6 +119,7 @@
       .shakes {  width: 3em; height: 3em; background:url(../../assets/img/icon/milkshake.svg); background-repeat: no-repeat; background-size: contain;}
       .cof {  width: 3em; height: 3em; background:url(../../assets/img/icon/coffee.svg); background-repeat: no-repeat; background-size: contain;}
       .chai {  width: 3em; height: 3em; background:url(../../assets/img/icon/chai.svg);background-repeat: no-repeat; background-size: contain; }
+      .cake {  width: 3em; height: 3em; background:url(../../assets/img/icon/cake.svg);background-repeat: no-repeat; background-size: contain; }
     }
 
   }
@@ -316,6 +317,7 @@
   .shakes {  width: 25px; height: 25px; background:url(../../assets/img/icon/milkshake.svg); background-repeat: no-repeat; background-size: contain;}
   .cof {  width: 25px; height: 25px; background:url(../../assets/img/icon/coffee.svg); background-repeat: no-repeat; background-size: contain;}
   .chai {  width: 25px; height: 25px; background:url(../../assets/img/icon/chai.svg);background-repeat: no-repeat; background-size: contain; }
+  .cake {  width: 25px; height: 25px; background:url(../../assets/img/icon/cake.svg);background-repeat: no-repeat; background-size: contain; }
 
    /**
     * Make the targets hover at the top of the viewport so that we never get
@@ -404,6 +406,7 @@
         p { text-transform: initial; margin-bottom:0; }
       }
       .product_icon { float: right; margin-top: 20px; padding-right: 30px;
+        &.cakes { margin-top: 25px; }
         span { display: block; width: 30px; height: 30px; }
       }
     }
