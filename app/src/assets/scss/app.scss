@@ -84,7 +84,7 @@
   body{ overflow: auto; background: $snow; width: 100%; height: auto; position: relative; min-height: 100vh; font-family: 'Convergence', sans-serif;
     a { text-decoration: none; text-transform: uppercase;
     }
-    h4 { padding: 20px; }
+    h4 { padding: 0px; }
   }
 
   h1,h2,h3,h4,h5,p { font-family: 'Convergence', sans-serif; }
@@ -194,8 +194,7 @@
   //
   //start homepage styles
   #home { background: white; width: 100%; height: 100%;
-    &.grad { padding:0; }
-    .grad { padding:0;
+    .grad {
       img { background-repeat: no-repeat; max-width: 50%!important; height: auto; background-size: contain;
         @media #{$mq-tablet}{ max-width: 80%!important }
         @media #{$mq-mobile-normal}{ max-width: 100%!important;}
@@ -204,14 +203,14 @@
   }
 
 //start slider styles
-.slider { width: 100%; height: auto; transition: all $transition; position: relative;
+.slider { max-height: 1200px; width: 100%; height: auto; transition: all $transition; position: relative;
   &:after { content: ""; width: 100%; position: absolute; bottom:0; height: 10px; background: white; }
-  @media #{$mq-mobile-normal}{ margin-top: 3em;}
+  @media #{$mq-mobile-normal}{ margin-top: 3.6em;}
   .white-shade { width: 100%; height: 100%; background: url("../../assets/img/slider-form.svg"); position: absolute; z-index: 3; left:0; background-repeat: no-repeat; background-size: cover; padding: 0; margin: 0;
     @media #{$mq-tablet}{ }
     @media #{$mq-mobile-normal}{ display: none; }
   }
-
+    .orbit-container { height: 200px;}
     .orbit-slide-number, .orbit-timer { z-index: 0; }
     .orbit-timer { width: 100%; top:0; left: 0;position: absolute;
       .orbit-progress { position: absolute; top: 0; left: 0; height: 4px;}
@@ -251,22 +250,24 @@
     .starCol { margin-top: 10px;  padding-bottom: 30px; }
   }
 }
-
-.add { width: 100%; height: 250px; padding: 50px 0px 10px 0px;
+.padding {
+  @media #{$mq-mobile-normal}{ margin-bottom:60px;   }
+ }
+.add { width: 100%; height: auto; padding: 50px 0px 50px 0px;
+  &:last-child {
+      @media #{$mq-mobile-normal}{ margin-bottom: 100px; height: auto!important; }
+  }
   &.ab {
     @media #{$mq-mobile-normal}{ padding:70px 20px 80px 20px!important; }
   }
 
-
   &.white { background: $snow; }
-  &.black { background: $LightDark; }
-  &.grad { background: #e6e6e6; /* Old browsers */ /* FF3.6-15 */
-  background: -webkit-linear-gradient(#e6e6e6 0%, #e5e3e3 100%);
-  background: -o-linear-gradient(#e6e6e6 0%, #e5e3e3 100%);
-  background: linear-gradient(#e6e6e6 0%, #e5e3e3 100%); /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#e5e3e3',GradientType=0 ); /* IE6-9 */
-
-    }
+  &.black { background: #e3e3e3; }
+  &.grad {
+background-image: linear-gradient(to right, #434343 0%, #1D1F16 100%);
+    h4 {  color: white; }
+    p { color: $main; }
+  }
   &.secondBlock {  }
   &.thirdBlock {  }
 }
@@ -285,7 +286,6 @@
   }
   .add { width: 100%; height: auto; padding: 50px 10px 20px 0px;
     &.white { background: $snow; }
-    &.black { background: $LightDark;  }
     }
   .prodIcons { width: 200px; height: 200px; margin:0 auto; background:url(../../assets/img/productIcons.svg); background-repeat: no-repeat; background-size: contain;
     @media #{$mq-mobile-normal}{ background:url(../../assets/img/productLong.svg);  height: 100px; background-repeat: no-repeat; background-size: contain; }
@@ -487,6 +487,7 @@
     }
   }
   .clock { display: block; width: 150px; height: 150px; background:url(../../assets/img/icon/clock.svg); background-repeat: no-repeat; background-size: contain; }
+  .map { display: block; width: 150px; height: 150px; background:url(../../assets/img/icon/map.svg); background-repeat: no-repeat; background-size: contain; }
   .time { margin-bottom: 20px;
     @media #{$mq-mobile-normal}{ margin-bottom: 40px; }
 
