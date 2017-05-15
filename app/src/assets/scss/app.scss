@@ -251,20 +251,32 @@
   }
 }
 .padding {
-  @media #{$mq-mobile-normal}{ margin-bottom:60px;   }
+  @media #{$mq-mobile-normal}{ margin-bottom: 30px;   }
  }
 .add { width: 100%; height: auto; padding: 50px 0px 50px 0px;
   &:last-child {
       @media #{$mq-mobile-normal}{ margin-bottom: 100px; height: auto!important; }
+  }
+  .bankImg { background: url("../../assets/img/bank.png"); background: url(../../assets/img/bank.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+    height: auto;
+    min-height: 250px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    @media #{$mq-mobile-normal}{  bottom: 100px;  }
   }
   &.ab {
     @media #{$mq-mobile-normal}{ padding:70px 20px 80px 20px!important; }
   }
 
   &.white { background: $snow; }
-  &.black { background: #e3e3e3; }
+  &.black { background: #060606; }
   &.grad {
-background-image: linear-gradient(to right, #434343 0%, #1D1F16 100%);
+   background-color:#111111;
+   @media #{$mq-mobile-normal}{ min-height: 500px;}
     h4 {  color: white; }
     p { color: $main; }
   }
