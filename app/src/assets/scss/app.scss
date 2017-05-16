@@ -59,6 +59,9 @@
 // @import 'typography';
 @import 'kitchenSink';
 
+
+
+
   $mq-mobile-narrower: "only screen and (max-width : 320px)";
   $mq-mobile-wider: "only screen and (min-width : 320px)";
 
@@ -600,3 +603,7 @@
 
 .spin-out-ccw.mui-leave { -webkit-transform: rotate(0); -ms-transform: rotate(0); transform: rotate(0); transition-property: opacity, -webkit-transform; transition-property: transform, opacity; transition-property: transform, opacity, -webkit-transform; opacity: 1; }
 .spin-out-ccw.mui-leave.mui-leave-active { -webkit-transform: rotate(-0.75turn); -ms-transform: rotate(-0.75turn); transform: rotate(-0.75turn); opacity: 0; }
+
+
+
+table{border-collapse:collapse;border-spacing:0}
