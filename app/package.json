@@ -42,7 +42,12 @@
     "email": "foundation@zurb.com"
   },
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "angular2-moment": "^1.3.3"
+  }
 }
